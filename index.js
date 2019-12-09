@@ -13,6 +13,7 @@ let isGameStarted = false;
 
 $start.addEventListener('click', startGame);
 $game.addEventListener('click', handleBoxClick);
+$gameTime.addEventListener('input', setGameTime);
 
 function startGame() {
     score = 0;
@@ -45,6 +46,17 @@ function handleBoxClick(event) {
         score++;
         renderBox();
     }
+}
+
+function setGameScore() {
+    $result.textContent = score.toString();
+}
+
+function setGameTime() {
+    var time = +$gameTime.value;
+    $time.textContent = time.toFixed(1);
+    show($timeHeader);
+    hide($resultHeader);
 }
 
 function show($el) {
