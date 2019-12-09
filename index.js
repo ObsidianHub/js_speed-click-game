@@ -37,6 +37,17 @@ function startGame() {
     renderBox();
 }
 
+function endGame() {
+    isGameStarted = false;
+    setGameScore();
+    $gameTime.removeAttribute('disabled');
+    show($start);
+    $game.innerHTML = '';
+    $game.style.backgroundColor = 'rgba(255,255,255,.4)';
+    hide($timeHeader);
+    show($resultHeader);
+}
+
 function handleBoxClick(event) {
     if (!isGameStarted) {
         return;
