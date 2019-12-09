@@ -12,6 +12,7 @@ let score = 0;
 let isGameStarted = false;
 
 $start.addEventListener('click', startGame);
+$game.addEventListener('click', handleBoxClick);
 
 function startGame() {
     score = 0;
@@ -33,6 +34,17 @@ function startGame() {
     }, 100);
 
     renderBox();
+}
+
+function handleBoxClick(event) {
+    if (!isGameStarted) {
+        return;
+    }
+
+    if (event.target.dataset.box) {
+        score++;
+        renderBox();
+    }
 }
 
 function show($el) {
