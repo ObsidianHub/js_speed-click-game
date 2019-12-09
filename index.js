@@ -11,6 +11,30 @@ let colors = ['red', 'blue', 'green', 'yellow', 'pink', 'purple', 'grey'];
 let score = 0;
 let isGameStarted = false;
 
+$start.addEventListener('click', startGame);
+
+function startGame() {
+    score = 0;
+    setGameTime();
+    $gameTime.setAttribute('disabled', 'true');
+    isGameStarted = true;
+    $game.style.backgroundColor = '#fff';
+    hide($start);
+
+    var interval = setInterval(function() {
+        var time = +$time.textContent;
+
+        if (time <= 0) {
+            clearInterval(interval);
+            endGame();
+        } else {
+            $time.textContent = (time - 0.1).toFixed(1);
+        }
+    }, 100);
+
+    renderBox();
+}
+
 function show($el) {
     $el.classList.remove('hide');
 }
