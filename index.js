@@ -11,3 +11,10 @@ let colors = ['red', 'blue', 'green', 'yellow', 'pink', 'purple', 'grey'];
 let score = 0;
 let isGameStarted = false;
 
+function show($el) {
+    $el.classList.remove('hide');
+}
+
+function hide($el) {
+    $el.classList.add('hide');
+}
