@@ -14,6 +14,17 @@ $start.addEventListener("click", startGame);
 $game.addEventListener("click", handleBoxClick);
 $gameTime.addEventListener("input", setGameTime);
 
+function handleBoxClick(event) {
+  if (!isGameStarted) {
+    return;
+  }
+
+  if (event.target.dataset.box) {
+    score++;
+    renderBox();
+  }
+}
+
 function setGameScore() {
   $result.textContent = score.toString();
 }
