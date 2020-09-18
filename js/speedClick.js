@@ -9,3 +9,7 @@ let $start = document.querySelector("#start"),
   isGameStarted = false;
 
 let colors = ["red", "blue", "green", "yellow", "pink", "purple", "grey"];
+
+$start.addEventListener("click", startGame);
+$game.addEventListener("click", handleBoxClick);
+$gameTime.addEventListener("input", setGameTime);
