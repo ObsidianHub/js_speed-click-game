@@ -20,3 +20,11 @@ function setGameTime() {
   show($timeHeader);
   hide($resultHeader);
 }
+
+function show($el) {
+  $el.classList.remove("hide");
+}
+
+function hide($el) {
+  $el.classList.add("hide");
+}
