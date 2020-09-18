@@ -13,3 +13,10 @@ let colors = ["red", "blue", "green", "yellow", "pink", "purple", "grey"];
 $start.addEventListener("click", startGame);
 $game.addEventListener("click", handleBoxClick);
 $gameTime.addEventListener("input", setGameTime);
+
+function setGameTime() {
+  var time = +$gameTime.value;
+  $time.textContent = time.toFixed(1);
+  show($timeHeader);
+  hide($resultHeader);
+}
