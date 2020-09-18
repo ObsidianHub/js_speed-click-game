@@ -14,6 +14,28 @@ $start.addEventListener("click", startGame);
 $game.addEventListener("click", handleBoxClick);
 $gameTime.addEventListener("input", setGameTime);
 
+function startGame() {
+  score = 0;
+  setGameTime();
+  $gameTime.setAttribute("disabled", "true");
+  isGameStarted = true;
+  $game.style.backgroundColor = "#fff";
+  hide($start);
+
+  var interval = setInterval(function () {
+    var time = +$time.textContent;
+
+    if (time <= 0) {
+      clearInterval(interval);
+      endGame();
+    } else {
+      $time.textContent = (time - 0.1).toFixed(1);
+    }
+  }, 100);
+
+  renderBox();
+}
+
 function handleBoxClick(event) {
   if (!isGameStarted) {
     return;
