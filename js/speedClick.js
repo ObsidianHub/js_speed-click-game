@@ -14,6 +14,10 @@ $start.addEventListener("click", startGame);
 $game.addEventListener("click", handleBoxClick);
 $gameTime.addEventListener("input", setGameTime);
 
+function setGameScore() {
+  $result.textContent = score.toString();
+}
+
 function setGameTime() {
   var time = +$gameTime.value;
   $time.textContent = time.toFixed(1);
