@@ -4,4 +4,8 @@ let $start = document.querySelector("#start"),
   $result = document.querySelector("#result"),
   $timeHeader = document.querySelector("#time-header"),
   $resultHeader = document.querySelector("#result-header"),
-  $gameTime = document.querySelector("#game-time");
+  $gameTime = document.querySelector("#game-time"),
+  score = 0,
+  isGameStarted = false;
+
+let colors = ["red", "blue", "green", "yellow", "pink", "purple", "grey"];
